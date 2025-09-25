@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flo Kanpur</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #000;
+      margin: 0;
+    }
+    #popup {
+      position: fixed;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #111;
+      color: #ff3333;
+      padding: 40px 60px;
+      border-radius: 15px;
+      font-size: 36px;
+      font-weight: bold;
+      font-family: Arial Black, Arial, sans-serif;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(255,0,0,0.6);
+      z-index: 1000;
+      border: 3px solid #ff0000;
+    }
+    video {
+      display: none;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <!-- Popup Box -->
+  <div id="popup">☠️ YOUR DEVICE HAS BEEN HACKED ☠️</div>
+
+  <!-- Video -->
+  <video id="bdayVideo" controls>
+    <source src="C:\Users\kaymo\Desktop\Flo_Fly\CyberSecurity.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+
+  <script>
+    window.onload = function() {
+      const popup = document.getElementById("popup");
+      const video = document.getElementById("bdayVideo");
+
+      // Hide video initially
+      video.style.display = "none";
+
+      // Show popup for 1.5 seconds
+      setTimeout(() => {
+        popup.style.display = "none"; // hide popup
+        video.style.display = "block"; // show video (but don't autoplay)
+      }, 2500);
+    }
+  </script>
+</body>
+</html>
